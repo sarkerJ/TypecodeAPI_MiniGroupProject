@@ -84,7 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIRunners\PostAPIRunner.cs" />
+    <Compile Include="APIRunners\UsersAPIRunner.cs" />
     <Compile Include="DTOs\PostDTO.cs" />
+    <Compile Include="DTOs\UsersDTO.cs" />
     <Compile Include="Interfaces\IAPIRunner.cs" />
     <Compile Include="TypecodeReader.cs" />
     <Compile Include="UnitTest1.cs" />
