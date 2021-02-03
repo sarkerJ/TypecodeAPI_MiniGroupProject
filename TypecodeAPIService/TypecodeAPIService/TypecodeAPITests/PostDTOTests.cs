@@ -23,5 +23,12 @@ namespace TypecodeAPIService.TypecodeAPITests
         {
             Assert.That(service.Status, Is.EqualTo("OK"));
         }
+
+        [Test]
+        public void CheckReturnValueAreCorrect()
+        {
+            Assert.That(service.results.id.ToString(), Is.EqualTo("1"));
+            Assert.That(service.results.title, Is.EqualTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
+        }
     }
 }
