@@ -31,5 +31,11 @@ namespace TypecodeAPIService.TypecodeAPITests
         {
             Assert.That(service.results.id, Is.EqualTo(1));
         }
+
+        [Test]
+        public void CheckCorrectAddressReturnedFromGetRequest()
+        {
+            Assert.That(service.results.address.street, Is.EqualTo("Kulas Light"));
+        }
     }
 }
