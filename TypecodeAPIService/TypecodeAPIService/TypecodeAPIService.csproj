@@ -94,6 +94,7 @@
     <Compile Include="Interfaces\IAPIRunner.cs" />
     <Compile Include="Services\TypecodeAPIServices.cs" />
     <Compile Include="TypecodeAPITests\PostDTOTests.cs" />
+    <Compile Include="TypecodeAPITests\UsersDTOTests.cs" />
     <Compile Include="TypecodeReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
