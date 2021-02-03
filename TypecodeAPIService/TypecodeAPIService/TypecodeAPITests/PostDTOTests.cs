@@ -30,5 +30,19 @@ namespace TypecodeAPIService.TypecodeAPITests
             Assert.That(service.results.id.ToString(), Is.EqualTo("1"));
             Assert.That(service.results.title, Is.EqualTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
         }
+
+        [Test]
+        public void CheckIfDeletePostReturnsOK()
+        {
+            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
+            new RestClient(TypecodeReader.BaseUrl), "posts/1", Method.DELETE));
+
+            Assert.That(service.Status, Is.EqualTo("OK"));
+
+            Assert.That(service.results.id, Is.EqualTo(0));
+            Assert.That(service.results.body, Is.Null);
+            Assert.That(service.results.title, Is.Null);
+            Assert.That(service.results.userId, Is.EqualTo(0));
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace TypecodeAPIService.APIRunners
 {
     public class PostAPIRunner : IAPIRunner
     {
-        Method _method = Method.GET;
+        Method _method;
 
         public string RawResponse { get; set; }
         public RestClient Client { get; }
@@ -21,16 +21,16 @@ namespace TypecodeAPIService.APIRunners
 
         public string Status { get; set; }
 
-        public PostAPIRunner(RestClient client, string resource)
+        public PostAPIRunner(RestClient client, string resource, Method method = Method.GET)
         {
             Client = client;
             Args = new List<KeyValuePair<string, object>> { new KeyValuePair<string, object>("resource", resource) };
+            _method = method;
         }
 
-        public PostAPIRunner(RestClient client, string resource, List<KeyValuePair<string, object>> bodyArgs, Method method) : this(client, resource)
+        public PostAPIRunner(RestClient client, string resource, List<KeyValuePair<string, object>> bodyArgs, Method method) : this(client, resource, method)
         {
             Args.AddRange(bodyArgs);
-            _method = method;
         }
 
         public void Execute()
