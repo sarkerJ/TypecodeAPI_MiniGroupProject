@@ -14,7 +14,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner<PostDTO>(
+            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
             new RestClient(TypecodeReader.BaseUrl), "posts/1"));
         }
 

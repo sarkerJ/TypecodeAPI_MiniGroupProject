@@ -8,6 +8,7 @@ using TypecodeAPIService.APIRunners;
 using TypecodeAPIService.DTOs;
 using TypecodeAPIService.Interfaces;
 using TypecodeAPIService;
+using Newtonsoft.Json;
 
 namespace TypecodeAPIService
 {
@@ -16,11 +17,11 @@ namespace TypecodeAPIService
         public T results { get; set; }
 
         public string Status { get; set; }
-        public TypecodeAPIServices( IAPIRunner<T> postdto)
+        public TypecodeAPIServices(IAPIRunner apiRunner)
         {
-            postdto.Execute();
-            results = postdto.ResponseDTO;
-            Status = postdto.Status;
+            apiRunner.Execute();
+            results = JsonConvert.DeserializeObject<T>(apiRunner.RawResponse);
+            Status = apiRunner.Status;
         }
     }
 }

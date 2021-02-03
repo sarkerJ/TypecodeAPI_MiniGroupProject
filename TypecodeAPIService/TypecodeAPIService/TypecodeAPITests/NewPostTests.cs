@@ -13,7 +13,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         public void Setup()
         {
             var args = new List<KeyValuePair<string, object>> { new KeyValuePair<string, object>("userId", 5) };
-            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner<PostDTO>(
+            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
             new RestClient(TypecodeReader.BaseUrl), "posts", args, Method.POST));
         }
 

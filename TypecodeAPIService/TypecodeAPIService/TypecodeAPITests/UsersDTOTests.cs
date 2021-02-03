@@ -16,7 +16,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner<UsersDTO>(
+            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner(
             new RestSharp.RestClient(TypecodeReader.BaseUrl), "users/1"));
         }
 

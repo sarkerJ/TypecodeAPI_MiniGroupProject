@@ -9,15 +9,15 @@ using TypecodeAPIService.Interfaces;
 
 namespace TypecodeAPIService.APIRunners
 {
-    public class UsersAPIRunner<T> : IAPIRunner<T>
+    public class UsersAPIRunner : IAPIRunner
     {
         public RestClient Client { get; }
 
-        public T ResponseDTO { get; set; }
 
         public List<KeyValuePair<string, object>> Args { get; }
 
         public string Status { get; set; }
+        public string RawResponse { get; set; }
 
         public UsersAPIRunner(RestClient client, string resource)
         {
@@ -30,11 +30,7 @@ namespace TypecodeAPIService.APIRunners
             var request = new RestRequest(Args.Where(x => x.Key == "resource").First().Value.ToString());
             var entireResponse = Client.Execute(request);
             Status = entireResponse.StatusCode.ToString();
-            var res = Client.Execute(request).Content;
-            if (res != "{}")
-            {
-                ResponseDTO = JsonConvert.DeserializeObject<T>(res);
-            }
+            RawResponse = Client.Execute(request).Content;
         }
     }
 }
