@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace TypecodeAPIService.APIRunners
 {
     public class PostAPIRunner<T> : IAPIRunner<T>
     {
+        Method _method = Method.GET;
+
         public RestClient Client { get; }
 
         public T ResponseDTO { get; set; }
@@ -24,9 +27,27 @@ namespace TypecodeAPIService.APIRunners
             Client = client;
             Args = new List<KeyValuePair<string, object>> { new KeyValuePair<string, object>("resource", resource) };
         }
+
+        public PostAPIRunner(RestClient client, string resource, List<KeyValuePair<string, object>> bodyArgs, Method method) : this(client, resource)
+        {
+            Args.AddRange(bodyArgs);
+            _method = method;
+        }
+
         public void Execute()
         {
             var request = new RestRequest(Args.Where(x => x.Key == "resource").First().Value.ToString());
+            var bodyArgs = Args.Where(x => x.Key != "resource");
+            request.Method = _method;
+            JObject body = new JObject();
+            if (bodyArgs.Count() > 0)
+            {
+                foreach(var arg in bodyArgs)
+                {
+                    body[arg.Key] = JToken.FromObject(arg.Value);
+                }
+                request.AddJsonBody(body.ToString());
+            }
             var entireResponse = Client.Execute(request);
             Status = entireResponse.StatusCode.ToString();
             var res = entireResponse.Content;
