@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using RestSharp;
+using System.Collections.Generic;
 using TypecodeAPIService.APIRunners;
 using TypecodeAPIService.DTOs;
 
@@ -13,7 +15,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         public void OneTimeSetUp()
         {
             service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner<PostDTO>(
-            new RestSharp.RestClient(TypecodeReader.BaseUrl), "posts/1"));
+            new RestClient(TypecodeReader.BaseUrl), "posts/1"));
         }
 
         [Test]
