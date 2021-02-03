@@ -13,7 +13,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         public void OneTimeSetUp()
         {
             service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner<PostDTO>(
-            new RestSharp.RestClient(TypecodeReader.BaseUrl), "post/1"));
+            new RestSharp.RestClient(TypecodeReader.BaseUrl), "posts/1"));
         }
 
         [Test]
