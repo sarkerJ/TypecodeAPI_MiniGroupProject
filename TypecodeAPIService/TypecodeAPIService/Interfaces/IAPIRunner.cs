@@ -12,6 +12,7 @@ namespace TypecodeAPIService.Interfaces
         RestClient Client { get; }
         T ResponseDTO { get; set; }
         List<KeyValuePair<string, object>> Args { get; }
+        string Status { get; set; }
         void Execute();
     }
 }
