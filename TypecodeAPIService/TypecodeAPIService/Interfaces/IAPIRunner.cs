@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TypecodeAPIService
 {
-    interface IAPIRunner<T>
+    public interface IAPIRunner<T>
     {
         RestClient Client { get; }
         T ResponseDTO { get; set; }
