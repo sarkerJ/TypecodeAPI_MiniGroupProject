@@ -18,19 +18,21 @@ namespace TypecodeAPIService.TypecodeAPITests
             new RestClient(TypecodeReader.BaseUrl), "posts/1"));
         }
 
+        [Order(1)]
         [Test]
         public void CheckResultIsOk()
         {
             Assert.That(service.Status, Is.EqualTo("OK"));
         }
-
+        [Order(2)]
         [Test]
         public void CheckReturnValueAreCorrect()
         {
             Assert.That(service.results.id.ToString(), Is.EqualTo("1"));
             Assert.That(service.results.title, Is.EqualTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
         }
-
+        
+        [Order(3)]
         [Test]
         public void CheckIfDeletePostReturnsOK()
         {
