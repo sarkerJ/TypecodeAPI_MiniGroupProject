@@ -89,10 +89,12 @@
   <ItemGroup>
     <Compile Include="APIRunners\PostAPIRunner.cs" />
     <Compile Include="APIRunners\UsersAPIRunner.cs" />
+    <Compile Include="DTOs\PostCommentsDTO.cs" />
     <Compile Include="DTOs\PostDTO.cs" />
     <Compile Include="DTOs\UsersDTO.cs" />
     <Compile Include="Interfaces\IAPIRunner.cs" />
     <Compile Include="Services\TypecodeAPIServices.cs" />
+    <Compile Include="TypecodeAPITests\PostCommentsTests.cs" />
     <Compile Include="TypecodeAPITests\PostDTOTests.cs" />
     <Compile Include="TypecodeAPITests\UsersDTOTests.cs" />
     <Compile Include="TypecodeReader.cs" />
