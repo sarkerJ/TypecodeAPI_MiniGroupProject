@@ -17,6 +17,8 @@ namespace TypecodeAPIService.APIRunners
 
         public List<KeyValuePair<string, object>> Args { get; }
 
+        public string Status { get; set; }
+
         public UsersAPIRunner(RestClient client, string resource)
         {
             Client = client;
@@ -26,6 +28,8 @@ namespace TypecodeAPIService.APIRunners
         public void Execute()
         {
             var request = new RestRequest(Args.Where(x => x.Key == "resource").First().Value.ToString());
+            var entireResponse = Client.Execute(request);
+            Status = entireResponse.StatusCode.ToString();
             var res = Client.Execute(request).Content;
             if (res != "{}")
             {
