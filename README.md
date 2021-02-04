@@ -1,7 +1,7 @@
 # TypecodeAPI Mini Group Project
 **Project Goal**
 
-The goal of this project was to create a comprehensive and thorough test framework for an API of our choosing. We chose the Typecode API, which is a straightforward API that mocks the response from a typical API without changing any resources on the server-side. This has the benefit of allowing us to test the GET, POST, PUT and DELETE HTTP verbs without needing to worry about the effects of requests persisting over the server lifetime. 
+The goal of this project was to create a comprehensive and thorough test framework for an API of our choosing. We chose the Typecode API, which is a straightforward API that mocks the response from a typical API without changing any resources on the server-side. This has the benefit of allowing us to test the GET, POST, PUT and DELETE HTTP verbs without needing to worry about the effects of requests persisting over the server lifetime.
 
 **Framework**
 
