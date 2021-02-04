@@ -6,7 +6,7 @@ using TypecodeAPIService.DTOs;
 
 namespace TypecodeAPIService.TypecodeAPITests.TodosTests
 {
-    public class GetTodos
+    public class GetUsersTodos
     {
         TypecodeAPIServices<TodosDTO[]> AllTodosService;
 

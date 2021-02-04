@@ -35,7 +35,7 @@ A simple utilities class was added for the users endpoint, whose purpose was to 
 
 ## Class Diagram
 
-![Typicode Class Diagram](https://github.com/sarkerJ/TypicodeAPI_MiniGroupProject/blob/dev/Images/ClassDiagram.JPG)
+![Typicode Class Diagram](https://github.com/sarkerJ/TypicodeAPI_MiniGroupProject/blob/dev/Images/TypicodeClassDiagram.JPG)
 
 
 
