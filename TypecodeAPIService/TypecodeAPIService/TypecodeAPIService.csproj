@@ -109,7 +109,7 @@
     <Compile Include="TypecodeAPITests\PostsTests\NewPostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\GetPostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\PutPostTest.cs" />
-    <Compile Include="TypecodeAPITests\TodosTests\GetTodos.cs" />
+    <Compile Include="TypecodeAPITests\UsersTodosTests\GetUsersTodos.cs" />
     <Compile Include="TypecodeAPITests\UserTests\DeleteUsersTests.cs" />
     <Compile Include="TypecodeAPITests\UserTests\GetUsersTests.cs" />
     <Compile Include="TypecodeAPITests\UserTests\NewUsersTests.cs" />
