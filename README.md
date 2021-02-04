@@ -10,7 +10,7 @@ The goal of this project was to create a comprehensive and thorough test framewo
 - [ ] The product backlog has been updated
 - [ ] All the unit tests pass
 - [ ] The deliverable has been reviewed and approved
-- [ ] Final deliverable completed by 10:30 - 04/02/2021
+- [ ] Final deliverable completed by 05/02/2021 10:30am
 
 ## Framework
 
