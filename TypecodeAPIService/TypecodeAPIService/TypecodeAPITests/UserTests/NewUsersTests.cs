@@ -10,7 +10,7 @@ using TypecodeAPIService.DTOs;
 
 namespace TypecodeAPIService.TypecodeAPITests.UsersDTOTests
 {
-    public class NewUserTests
+    public class NewUsersTests
     {
         TypecodeAPIServices<UsersDTO> service;
 
