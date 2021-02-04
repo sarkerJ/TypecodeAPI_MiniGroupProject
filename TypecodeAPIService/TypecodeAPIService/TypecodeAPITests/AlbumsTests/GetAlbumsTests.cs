@@ -46,5 +46,22 @@ namespace TypecodeAPIService.TypecodeAPITests.AlbumsTests
 
             Assert.That(_singleAlbumsService.results.id, Is.EqualTo(1));
         }
+
+        [Test]
+        public void GetSingleAlbumsReturns_NotFound_IfInvalidId()
+        {
+            _singleAlbumsService = new TypecodeAPIServices<AlbumsDTO>(new AlbumAPIRunner(new RestClient(TypecodeReader.BaseUrl), "/albums/1698168163521"));
+
+            Assert.That(_singleAlbumsService.Status, Is.EqualTo("NotFound"));
+
+        }
+
+        [Test]
+        public void GetSingleAlbumsReturns_ResultWithZeroId_IfNotFound()
+        {
+            _singleAlbumsService = new TypecodeAPIServices<AlbumsDTO>(new AlbumAPIRunner(new RestClient(TypecodeReader.BaseUrl), "/albums/1698168163521"));
+
+            Assert.That(_singleAlbumsService.results.id, Is.EqualTo(0));
+        }
     }
 }

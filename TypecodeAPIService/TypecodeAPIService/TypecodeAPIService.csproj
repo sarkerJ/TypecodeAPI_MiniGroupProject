@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIRunners\AlbumAPIRunner.cs" />
-    <Compile Include="APIRunners\APIRunnnerBase.cs" />
+    <Compile Include="APIRunners\APIRunnerBase.cs" />
     <Compile Include="APIRunners\PostAPIRunner.cs" />
     <Compile Include="APIRunners\UsersAPIRunner.cs" />
     <Compile Include="DTOs\AlbumsDTO.cs" />
@@ -99,7 +99,11 @@
     <Compile Include="DTOs\UsersDTO.cs" />
     <Compile Include="Interfaces\IAPIRunner.cs" />
     <Compile Include="Services\TypecodeAPIServices.cs" />
+    <Compile Include="TypecodeAPITests\AlbumsPhotosTests\GetAlbumPhotoTests.cs" />
+    <Compile Include="TypecodeAPITests\AlbumsTests\DeleteAlbumTests.cs" />
     <Compile Include="TypecodeAPITests\AlbumsTests\GetAlbumsTests.cs" />
+    <Compile Include="TypecodeAPITests\AlbumsTests\PostAlbumTests.cs" />
+    <Compile Include="TypecodeAPITests\AlbumsTests\PutAlbumTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\DeletePostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsCommentsTests\PostCommentsTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\NewPostTests.cs" />
