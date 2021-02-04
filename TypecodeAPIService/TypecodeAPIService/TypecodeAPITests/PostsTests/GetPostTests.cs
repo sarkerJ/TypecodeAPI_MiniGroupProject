@@ -6,7 +6,7 @@ using TypecodeAPIService.DTOs;
 
 namespace TypecodeAPIService.TypecodeAPITests
 {
-    public class PostDTOTests
+    public class GetPostTests
     {
 
         TypecodeAPIServices<PostDTO> service;
@@ -14,7 +14,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner<PostDTO>(
+            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
             new RestClient(TypecodeReader.BaseUrl), "posts/1"));
         }
 
@@ -23,5 +23,12 @@ namespace TypecodeAPIService.TypecodeAPITests
         {
             Assert.That(service.Status, Is.EqualTo("OK"));
         }
+
+        [Test]
+        public void CheckReturnValueAreCorrect()
+        {
+            Assert.That(service.results.id.ToString(), Is.EqualTo("1"));
+            Assert.That(service.results.title, Is.EqualTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
+        } 
     }
 }

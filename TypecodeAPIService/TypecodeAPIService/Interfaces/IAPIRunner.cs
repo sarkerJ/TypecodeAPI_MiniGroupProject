@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace TypecodeAPIService.Interfaces
 {
-    public interface IAPIRunner<T>
+    public interface IAPIRunner
     {
         RestClient Client { get; }
-        T ResponseDTO { get; set; }
+        string RawResponse { get; set; }
         List<KeyValuePair<string, object>> Args { get; }
         string Status { get; set; }
         void Execute();

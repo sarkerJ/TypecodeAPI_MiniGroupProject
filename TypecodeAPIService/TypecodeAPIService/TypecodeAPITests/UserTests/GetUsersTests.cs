@@ -9,14 +9,14 @@ using TypecodeAPIService.DTOs;
 
 namespace TypecodeAPIService.TypecodeAPITests
 {
-    public class UsersDTOTests
+    public class GetUsersTests
     {
         TypecodeAPIServices<UsersDTO> service;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner<UsersDTO>(
+            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner(
             new RestSharp.RestClient(TypecodeReader.BaseUrl), "users/1"));
         }
 

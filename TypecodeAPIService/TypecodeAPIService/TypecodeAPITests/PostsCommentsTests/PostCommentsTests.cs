@@ -13,7 +13,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            service = new TypecodeAPIServices<PostCommentsDTO[]>(new PostAPIRunner<PostCommentsDTO[]>(new RestClient(TypecodeReader.BaseUrl), "posts/1/comments"));
+            service = new TypecodeAPIServices<PostCommentsDTO[]>(new PostAPIRunner(new RestClient(TypecodeReader.BaseUrl), "posts/1/comments"));
         }
 
         [Test]

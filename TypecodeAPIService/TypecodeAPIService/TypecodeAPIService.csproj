@@ -94,17 +94,21 @@
     <Compile Include="DTOs\UsersDTO.cs" />
     <Compile Include="Interfaces\IAPIRunner.cs" />
     <Compile Include="Services\TypecodeAPIServices.cs" />
-    <Compile Include="TypecodeAPITests\PostCommentsTests.cs" />
-    <Compile Include="TypecodeAPITests\NewPostTests.cs" />
-    <Compile Include="TypecodeAPITests\PostDTOTests.cs" />
-    <Compile Include="TypecodeAPITests\UsersDTOTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsTests\DeletePostTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsCommentsTests\PostCommentsTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsTests\NewPostTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsTests\GetPostTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsTests\PutPostTest.cs" />
+    <Compile Include="TypecodeAPITests\UserTests\GetUsersTests.cs" />
     <Compile Include="TypecodeReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="TypecodeClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

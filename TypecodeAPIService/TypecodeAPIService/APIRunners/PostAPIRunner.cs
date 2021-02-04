@@ -10,28 +10,27 @@ using TypecodeAPIService.Interfaces;
 
 namespace TypecodeAPIService.APIRunners
 {
-    public class PostAPIRunner<T> : IAPIRunner<T>
+    public class PostAPIRunner : IAPIRunner
     {
-        Method _method = Method.GET;
+        Method _method;
 
+        public string RawResponse { get; set; }
         public RestClient Client { get; }
-
-        public T ResponseDTO { get; set; }
 
         public List<KeyValuePair<string, object>> Args { get; }
 
         public string Status { get; set; }
 
-        public PostAPIRunner(RestClient client, string resource)
+        public PostAPIRunner(RestClient client, string resource, Method method = Method.GET)
         {
             Client = client;
             Args = new List<KeyValuePair<string, object>> { new KeyValuePair<string, object>("resource", resource) };
+            _method = method;
         }
 
-        public PostAPIRunner(RestClient client, string resource, List<KeyValuePair<string, object>> bodyArgs, Method method) : this(client, resource)
+        public PostAPIRunner(RestClient client, string resource, Method method, List<KeyValuePair<string, object>> bodyArgs) : this(client, resource, method)
         {
             Args.AddRange(bodyArgs);
-            _method = method;
         }
 
         public void Execute()
@@ -50,11 +49,7 @@ namespace TypecodeAPIService.APIRunners
             }
             var entireResponse = Client.Execute(request);
             Status = entireResponse.StatusCode.ToString();
-            var res = entireResponse.Content;
-            if (res != "{}")
-            {
-                ResponseDTO = JsonConvert.DeserializeObject<T>(res);
-            }
+            RawResponse = entireResponse.Content;
         }
     }
 }
