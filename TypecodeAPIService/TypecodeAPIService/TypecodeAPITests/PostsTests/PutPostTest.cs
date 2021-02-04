@@ -21,7 +21,7 @@ namespace TypecodeAPIService.TypecodeAPITests
             };
 
             service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
-            new RestClient(TypecodeReader.BaseUrl), $"posts/{args.Where(x => x.Key == "id").First().Value}", args, Method.PUT));
+            new RestClient(TypecodeReader.BaseUrl), $"posts/{args.Where(x => x.Key == "id").First().Value}", Method.PUT, args));
         }
 
         [Test]

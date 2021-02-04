@@ -14,7 +14,7 @@ namespace TypecodeAPIService.TypecodeAPITests
         {
             var args = new List<KeyValuePair<string, object>> { new KeyValuePair<string, object>("userId", 5) };
             service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
-            new RestClient(TypecodeReader.BaseUrl), "posts", args, Method.POST));
+            new RestClient(TypecodeReader.BaseUrl), "posts", Method.POST, args));
         }
 
         [Test]

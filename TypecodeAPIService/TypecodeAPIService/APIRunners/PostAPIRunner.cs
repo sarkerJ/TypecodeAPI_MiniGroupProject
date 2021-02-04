@@ -28,7 +28,7 @@ namespace TypecodeAPIService.APIRunners
             _method = method;
         }
 
-        public PostAPIRunner(RestClient client, string resource, List<KeyValuePair<string, object>> bodyArgs, Method method) : this(client, resource, method)
+        public PostAPIRunner(RestClient client, string resource, Method method, List<KeyValuePair<string, object>> bodyArgs) : this(client, resource, method)
         {
             Args.AddRange(bodyArgs);
         }
