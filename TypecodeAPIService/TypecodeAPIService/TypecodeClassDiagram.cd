@@ -221,7 +221,7 @@
   <Class Name="TypecodeAPIService.TypecodeAPITests.UserTests.PutUsersTests" Collapsed="true">
     <Position X="10" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAUAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAgAAIAAIAAAAAACAAAAAAAAAAUAAAAAAEAA=</HashCode>
       <FileName>TypecodeAPITests\UserTests\PutUsersTests.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -230,6 +230,13 @@
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Utilities\UsersUtilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TypecodeAPIService.TypecodeAPITests.UserTests.DeleteUsersTests" Collapsed="true">
+    <Position X="10" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAgAAA=</HashCode>
+      <FileName>TypecodeAPITests\UserTests\DeleteUsersTests.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TypecodeAPIService.Interfaces.IAPIRunner" Collapsed="true">
