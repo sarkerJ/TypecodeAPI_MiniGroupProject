@@ -20,5 +20,14 @@ namespace TypecodeAPIService.TypecodeAPITests
 
             Assert.That(service.Status, Is.EqualTo("OK"));
         }
+
+        [Test]
+        public void GivenANonExisting_PostId_DeleteStatus_ReturnsOk()
+        {
+            service = new TypecodeAPIServices<PostDTO>(new PostAPIRunner(
+            new RestClient(TypecodeReader.BaseUrl), "posts/234234234", Method.DELETE));
+
+            Assert.That(service.Status, Is.EqualTo("OK"));
+        }
     }
 }
