@@ -26,4 +26,6 @@ The testing of the created framework was focused on ensuring a comprehensive tes
 
 ## Sprint Retrospective
 
+One of the key things that can be taken away from this project is an appreciation for how a well-structured framework can make the testing of a framework very straightforward. By adhering to object oriented principles, we minimised any code repeatibility (for example through inheritance of a base runner class), and dependency injection ensured the framework was as loosely-coupled as possible. By keeping a clear separation of concerns between the APIRunner and the service class, scalability of the framework was optimised and the single responsibility principle was not violated.
+
 
