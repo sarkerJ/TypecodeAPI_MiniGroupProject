@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TypecodeAPIService.APIRunners;
 using TypecodeAPIService.DTOs;
+using TypecodeAPIService.Utilities;
 
 namespace TypecodeAPIService.TypecodeAPITests
 {
@@ -53,7 +54,25 @@ namespace TypecodeAPIService.TypecodeAPITests
         {
             bulkService = new TypecodeAPIServices<UsersDTO[]>(new UsersAPIRunner(
                new RestSharp.RestClient(TypecodeReader.BaseUrl), "users"));
-            Assert.That(bulkService.results.Count(), Is.EqualTo(10));
+            Assert.That(UsersUtilities.FindNumberOfUsers(bulkService.results), Is.EqualTo(10));
+        }
+
+        [TestCase("Leanne Graham")]
+        public void CheckUserExistsInArrayOfUsers_GivenName(string name)
+        {
+            bulkService = new TypecodeAPIServices<UsersDTO[]>(new UsersAPIRunner(
+               new RestSharp.RestClient(TypecodeReader.BaseUrl), "users"));
+            Assert.That(UsersUtilities.VerifyUserExistsByName(bulkService.results, name));
+        }
+
+        [TestCase("Leanne Graham")]
+        public void ReturnedUserFromArrayOfUsersHasCorrectProperties_GivenName(string name)
+        {
+            bulkService = new TypecodeAPIServices<UsersDTO[]>(new UsersAPIRunner(
+              new RestSharp.RestClient(TypecodeReader.BaseUrl), "users"));
+            UsersDTO retrievedUser = UsersUtilities.GetUserIfExists(bulkService.results, name);
+            Assert.That(retrievedUser.username, Is.EqualTo("Bret"));
+            Assert.That(retrievedUser.phone, Is.EqualTo("1-770-736-8031 x56442"));
         }
     }
 }
