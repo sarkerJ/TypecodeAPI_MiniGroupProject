@@ -19,11 +19,6 @@ namespace TypecodeAPIService.TypecodeAPITests
             new RestClient(TypecodeReader.BaseUrl), "posts/1", Method.DELETE));
 
             Assert.That(service.Status, Is.EqualTo("OK"));
-
-            Assert.That(service.results.id, Is.EqualTo(0));
-            Assert.That(service.results.body, Is.Null);
-            Assert.That(service.results.title, Is.Null);
-            Assert.That(service.results.userId, Is.EqualTo(0));
         }
     }
 }
