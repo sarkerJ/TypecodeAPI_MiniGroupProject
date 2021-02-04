@@ -95,6 +95,7 @@
     <Compile Include="DTOs\PhotosDTO.cs" />
     <Compile Include="DTOs\PostCommentsDTO.cs" />
     <Compile Include="DTOs\PostDTO.cs" />
+    <Compile Include="DTOs\TodosDTO.cs" />
     <Compile Include="DTOs\UsersDTO.cs" />
     <Compile Include="Interfaces\IAPIRunner.cs" />
     <Compile Include="Services\TypecodeAPIServices.cs" />
@@ -104,10 +105,11 @@
     <Compile Include="TypecodeAPITests\AlbumsTests\PostAlbumTests.cs" />
     <Compile Include="TypecodeAPITests\AlbumsTests\PutAlbumTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\DeletePostTests.cs" />
-    <Compile Include="TypecodeAPITests\PostsCommentsTests\PostCommentsTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsCommentsTests\GetPostCommentsTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\NewPostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\GetPostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\PutPostTest.cs" />
+    <Compile Include="TypecodeAPITests\TodosTests\GetTodos.cs" />
     <Compile Include="TypecodeAPITests\UserTests\GetUsersTests.cs" />
     <Compile Include="TypecodeAPITests\UserTests\NewUserTests.cs" />
     <Compile Include="TypecodeReader.cs" />

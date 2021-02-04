@@ -11,6 +11,9 @@ namespace TypecodeAPIService.TypecodeAPITests
 
         TypecodeAPIServices<PostDTO> service;
 
+        TypecodeAPIServices<PostDTO[]> allPostsService;
+
+
         [Test]
         public void CheckResultIsOk()
         {
@@ -37,6 +40,30 @@ namespace TypecodeAPIService.TypecodeAPITests
             new RestClient(TypecodeReader.BaseUrl), "posts/13423424"));
 
             Assert.That(service.Status, Is.EqualTo("NotFound"));
+        }
+
+        [Test]
+        public void CheckIfAll_PostsAreReturnedStatusIs_OK()
+        {
+            allPostsService = new TypecodeAPIServices<PostDTO[]>(new PostAPIRunner(new RestClient(TypecodeReader.BaseUrl), "posts/"));
+
+            Assert.That(allPostsService.Status, Is.EqualTo("OK"));
+        }
+
+        [Test]
+        public void CheckIfAll_PostsAreReturnedCount_IsGreaterThan_One()
+        {
+            allPostsService = new TypecodeAPIServices<PostDTO[]>(new PostAPIRunner(new RestClient(TypecodeReader.BaseUrl), "posts/"));
+
+            Assert.That(allPostsService.results.Length, Is.GreaterThan(1));
+        }
+
+        [Test]
+        public void CheckIfAll_PostsAreReturnedCount_Is100()
+        {
+            allPostsService = new TypecodeAPIServices<PostDTO[]>(new PostAPIRunner(new RestClient(TypecodeReader.BaseUrl), "posts/"));
+
+            Assert.That(allPostsService.results.Length, Is.EqualTo(100));
         }
     }
 }
