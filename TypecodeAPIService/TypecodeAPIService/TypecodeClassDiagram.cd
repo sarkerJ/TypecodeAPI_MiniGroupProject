@@ -40,19 +40,19 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="TypecodeAPIService.TypecodeAPITests.GetUsersTests" Collapsed="true">
-    <Position X="10" Y="6.25" Width="1.25" />
+    <Position X="10" Y="6.25" Width="1.5" />
     <AssociationLine Name="bulkService" Type="TypecodeAPIService.TypecodeAPIServices&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.99" Y="6.25" />
-        <Point X="10.99" Y="5" />
+        <Point X="11.188" Y="6.25" />
+        <Point X="11.188" Y="5" />
         <Point X="5.25" Y="5" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="5.081" Y="0.089" />
+        <Position X="4.998" Y="-1.067" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEBAAAAACAAAAAAAAAAAAAAIAEAIAAAAIAA=</HashCode>
+      <HashCode>AQAAAAAAAEBAAAAACAAAAAAAAAAAAAAIAEAIAAAAMAA=</HashCode>
       <FileName>TypecodeAPITests\UserTests\GetUsersTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -104,11 +104,12 @@
     <AssociationLine Name="service" Type="TypecodeAPIService.TypecodeAPIServices&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="7.5" Y="6.25" />
-        <Point X="7.5" Y="5.312" />
+        <Point X="7.5" Y="5.875" />
+        <Point X="5.25" Y="5.875" />
         <Point X="5.25" Y="5.312" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="1.183" Y="-0.263" />
+        <Position X="-2.232" Y="0.35" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -148,14 +149,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TypecodeAPIService.DTOs.TodosDTO" Collapsed="true">
-    <Position X="6.75" Y="3.25" Width="1.5" />
+    <Position X="10.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>DTOs\TodosDTO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TypecodeAPIService.DTOs.UsersDTO" Collapsed="true">
-    <Position X="8.5" Y="3.25" Width="1.5" />
+    <Position X="10.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAIAAAAEAAAIEAAAgAAAAAAAAAgQ=</HashCode>
       <FileName>DTOs\UsersDTO.cs</FileName>
@@ -210,11 +211,25 @@
       <FileName>TypecodeAPITests\PostsTests\PutPostTest.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TypecodeAPIService.TypecodeAPITests.UsersDTOTests.NewUserTests" Collapsed="true">
+  <Class Name="TypecodeAPIService.TypecodeAPITests.UsersDTOTests.NewUsersTests" Collapsed="true">
     <Position X="10" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAIAAAAAAAAAAQBAAAAAAEAAAAAAAAA=</HashCode>
-      <FileName>TypecodeAPITests\UserTests\NewUserTests.cs</FileName>
+      <FileName>TypecodeAPITests\UserTests\NewUsersTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TypecodeAPIService.TypecodeAPITests.UserTests.PutUsersTests" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAUAAAAAAAAA=</HashCode>
+      <FileName>TypecodeAPITests\UserTests\PutUsersTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TypecodeAPIService.Utilities.UsersUtilities" Collapsed="true">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Utilities\UsersUtilities.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TypecodeAPIService.Interfaces.IAPIRunner" Collapsed="true">
