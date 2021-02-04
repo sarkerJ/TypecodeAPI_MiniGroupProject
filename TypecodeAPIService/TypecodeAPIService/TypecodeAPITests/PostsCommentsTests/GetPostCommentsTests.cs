@@ -6,7 +6,7 @@ using TypecodeAPIService.DTOs;
 
 namespace TypecodeAPIService.TypecodeAPITests
 {
-    public class PostCommentsTests
+    public class GetPostCommentsTests
     {
         TypecodeAPIServices<PostCommentsDTO[]> service;
 

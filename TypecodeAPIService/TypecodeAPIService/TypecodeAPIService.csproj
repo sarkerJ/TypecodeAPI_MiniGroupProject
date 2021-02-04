@@ -105,7 +105,7 @@
     <Compile Include="TypecodeAPITests\AlbumsTests\PostAlbumTests.cs" />
     <Compile Include="TypecodeAPITests\AlbumsTests\PutAlbumTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\DeletePostTests.cs" />
-    <Compile Include="TypecodeAPITests\PostsCommentsTests\PostCommentsTests.cs" />
+    <Compile Include="TypecodeAPITests\PostsCommentsTests\GetPostCommentsTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\NewPostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\GetPostTests.cs" />
     <Compile Include="TypecodeAPITests\PostsTests\PutPostTest.cs" />
