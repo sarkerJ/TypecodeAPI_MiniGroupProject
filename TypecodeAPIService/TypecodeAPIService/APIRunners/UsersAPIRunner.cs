@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -9,28 +10,13 @@ using TypecodeAPIService.Interfaces;
 
 namespace TypecodeAPIService.APIRunners
 {
-    public class UsersAPIRunner : IAPIRunner
+    public class UsersAPIRunner : APIRunnerBase
     {
-        public RestClient Client { get; }
-
-
-        public List<KeyValuePair<string, object>> Args { get; }
-
-        public string Status { get; set; }
-        public string RawResponse { get; set; }
-
-        public UsersAPIRunner(RestClient client, string resource)
+        public UsersAPIRunner(RestClient client, string resource, Method method = Method.GET) : base(client, resource, method)
         {
-            Client = client;
-            Args = new List<KeyValuePair<string, object>> { new KeyValuePair<string, object>("resource", resource) };
         }
-
-        public void Execute()
+        public UsersAPIRunner(RestClient client, string resource, Method method, List<KeyValuePair<string, object>> bodyArgs) : base(client, resource, method, bodyArgs)
         {
-            var request = new RestRequest(Args.Where(x => x.Key == "resource").First().Value.ToString());
-            var entireResponse = Client.Execute(request);
-            Status = entireResponse.StatusCode.ToString();
-            RawResponse = Client.Execute(request).Content;
         }
     }
 }
