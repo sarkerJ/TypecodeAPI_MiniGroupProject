@@ -42,6 +42,21 @@ namespace TypecodeAPIService.TypecodeAPITests.UserTests
         }
 
         [Test]
+        public void CheckPutRequestReturnsCorrectUser_IfCorrectOptionalIDDeclaredInRequestBody()
+        {
+            var args = new List<KeyValuePair<string, object>>
+            {
+                new KeyValuePair<string, object>("id", 1),
+                new KeyValuePair<string, object>("name", "Oliver"),
+                new KeyValuePair<string, object>("username", "Oliver123")
+            };
+            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner(
+                new RestClient(TypecodeReader.BaseUrl), "users/1", Method.PUT, args));
+            Assert.That(service.Status, Is.EqualTo("OK"));
+            Assert.That(service.results.id, Is.EqualTo(1));
+        }
+
+        [Test]
         public void CheckReturnedUserFromPutRequest_HasNoOtherFieldsChanged()
         {
             var args = new List<KeyValuePair<string, object>>
@@ -63,6 +78,48 @@ namespace TypecodeAPIService.TypecodeAPITests.UserTests
             Assert.That(service.results.address.street, Is.EqualTo("Kulas Light"));
             Assert.That(service.results.address.suite, Is.EqualTo("Apt. 556"));
             Assert.That(service.results.address.city, Is.EqualTo("Gwenborough"));
+        }
+
+        [Test]
+        public void CheckNotFoundReturned_IfIDNotSpecifiedInURLOrRequestBody()
+        {
+            var args = new List<KeyValuePair<string, object>>
+            {
+                new KeyValuePair<string, object>("name", "Oliver"),
+                new KeyValuePair<string, object>("username", "Oliver123")
+            };
+            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner(
+                new RestClient(TypecodeReader.BaseUrl), "users", Method.PUT, args));
+            Assert.That(service.Status, Is.EqualTo("NotFound"));
+        }
+
+        [Test]
+        public void CheckNotFoundReturned_IfIDNotSpecifiedInURL()
+        {
+            var args = new List<KeyValuePair<string, object>>
+            {
+                new KeyValuePair<string, object>("id", 100),
+                new KeyValuePair<string, object>("name", "Oliver"),
+                new KeyValuePair<string, object>("username", "Oliver123")
+            };
+            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner(
+                new RestClient(TypecodeReader.BaseUrl), "users", Method.PUT, args));
+            Assert.That(service.Status, Is.EqualTo("NotFound"));
+        }
+
+        [Test]
+        public void CheckIDNotChanged_IfWrongOptionalIDDeclaredInRequestBody()
+        {
+            var args = new List<KeyValuePair<string, object>>
+            {
+                new KeyValuePair<string, object>("id", 100),
+                new KeyValuePair<string, object>("name", "Oliver"),
+                new KeyValuePair<string, object>("username", "Oliver123")
+            };
+            service = new TypecodeAPIServices<UsersDTO>(new UsersAPIRunner(
+                new RestClient(TypecodeReader.BaseUrl), "users/1", Method.PUT, args));
+            Assert.That(service.Status, Is.EqualTo("OK"));
+            Assert.That(service.results.id, Is.EqualTo(1));
         }
     }
 }
